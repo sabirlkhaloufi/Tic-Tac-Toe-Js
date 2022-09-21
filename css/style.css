@@ -1,0 +1,74 @@
+#game{
+    background-image: url("../assets/images/img3.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+#index{
+    background-image: url("../assets/images/cover-start.png");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.case{
+    height: 110px !important;
+    width: 110px !important;
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    font-size: 70px;
+}
+
+.Game{
+    display: flex;
+    flex-wrap: wrap;
+    width: 330px;
+}
+.mt-7{
+    margin-top: 255px;
+}
+
+#index input{
+    background-color:transparent;
+    color: white;
+}
+
+#case1{
+    border-top:none; 
+    border-left:none;
+}
+
+#case2{
+    border-top:none;
+}
+
+#case3{
+    border-top:none; 
+    border-right:none;
+}
+
+#case4{
+    border-left:none;
+}
+
+#case6{
+    border-right:none;
+}
+
+#case7{
+    border-bottom:none; 
+    border-left:none;
+}
+
+#case8{
+    border-bottom:none;
+}
+
+#case9{
+    border-bottom:none; 
+    border-right:none;
+}
+
