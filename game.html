@@ -8,30 +8,43 @@
     <link rel="shortcut icon" href="./assets/icons/icon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100" id="game">
-    <div class="boxGame">
+    <div class=" ">
         <div class="d-flex justify-content-center align-items-center gap-5 text-white pb-5 h4">
             <span class="player1">Player 1</span>
             <span>VS</span>
             <span class="player2">Player 2</span>
         </div>
-        <div class="Game">
-            <span class="case" id="case1"></span>
-            <span class="case" id="case2"></span>
-            <span class="case" id="case3"></span>
+        <div class="Game boxGame">
+            <span class="case" id="case1"></span></span>
+            <span class="case" id="case2"></span></span>
+            <span class="case" id="case3"></span></span>
 
-            <span class="case" id="case4"></span>
-            <span class="case" id="case5"></span>
-            <span class="case" id="case6"></span>
+            <span class="case" id="case4"></span></span>
+            <span class="case" id="case5"></span></span>
+            <span class="case" id="case6"></span></span>
 
-            <span class="case" id="case7"></span>
-            <span class="case" id="case8"></span>
-            <span class="case" id="case9"></span>
+            <span class="case" id="case7"></span></span>
+            <span class="case" id="case8"></span></span>
+            <span class="case" id="case9"></span></span>
         </div>
-        <div class="d-flex justify-content-between mt-5 align-items-center">
-            <button class="btn btn-primary btnReset">Reset</button>
-            <a class="btn btn-primary" href="index.html">Exit</a>
+        <div class="d-flex justify-content-end mt-5 align-items-center gap-2">
+            <img class="btnReset" src="./assets/icons/restart.png" alt="" width="50" height="50">
+            <a href="index.html"><img class=" btnReset" src="./assets/icons/exit.png" alt="" width="60" height="60"></a>
+        </div>
+    </div>
+
+    <div class="result d-none position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
+        <div class="boxResult bg-light d-flex justify-content-center align-items-center flex-column">
+            <img src="./assets/images/youwin.png" alt="" height="100" width="300">
+            <h2 class="Pwin"></h2>
+            <div class="d-flex justify-content-end align-items-center gap-2">
+                <a href="game.html"><img class="btnReset" src="./assets/icons/restart.png" alt="" width="30" height="30"></a>
+                <a href="index.html"><img class=" btnReset" src="./assets/icons/exit.png" alt="" width="40" height="40"></a>
+            </div>
         </div>
     </div>
     <script src="./js/main.js"></script>

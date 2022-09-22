@@ -4,15 +4,13 @@ const AllCases = document.querySelectorAll(".case");
 const btnReset = document.querySelector(".btnReset");
 let casContent = "O";
 let content = [];
-let gagne = false;
+let  i = 0;
 
 getNamePlayers();
 function getNamePlayers(){
     firstPlayer.innerHTML = "P1:" +" "+ localStorage.getItem("p1");
     secondPlayer.innerHTML = "P2:" +"  " +localStorage.getItem("p2");  
 }
-
-
 
 AllCases.forEach(cas => {
     cas.addEventListener("click",()=>{
@@ -30,69 +28,86 @@ AllCases.forEach(cas => {
     })
 });
 
-
-btnReset.addEventListener("click",()=>{
+function Reset(){
     AllCases.forEach(cas => {
         cas.innerHTML="";
-        casContent="O";
-        content = [];
     });
-})
+    casContent="O";
+    content = [];
+    i = 0;
+}
 
+btnReset.addEventListener("click",()=>{
+    Reset();
+})
 
 function calcResult(){
     content = [];
     AllCases.forEach(cas => {
         content.push(cas.innerHTML);
     });
-    
+
     testRows();
     testColumn();
     testX();
-
-    function viewResult(status){
-        gagne = true;
-        if(status == "X"){
-            console.log(firstPlayer.innerHTML + " " + "gangne")
-        }
-        else{
-            console.log(secondPlayer.innerHTML + " " + "gangne")
-        }
+    
+    if(i==27){
+        Reset();
     }
+}
 
-    function testRows(){
-        if(content[0] == content[1] && content[1] == content[2] && content[2] != ""){
-            viewResult(content[0]);
-        }
-        if(content[3] == content[4] && content[4] == content[5] && content[5] != ""){
-            viewResult(content[3]);
-        }
-        if(content[6] == content[7] && content[7] == content[8] && content[8] != ""){
-            viewResult(content[6]);
-        }
+function viewResult(caracter){
+
+    if(caracter == "X"){
+        document.querySelector(".result").classList.remove("d-none");
+        document.querySelector(".Pwin").innerHTML = firstPlayer.innerHTML;
     }
-
-    function testColumn(){
-        if(content[0] == content[3] && content[3] == content[6] && content[6] != ""){
-            viewResult(content[0]);
-        }
-        if(content[1] == content[4] && content[4] == content[7] && content[7] != ""){
-            viewResult(content[1]);
-        }
-        if(content[2] == content[5] && content[5] == content[8] && content[8] != ""){
-            viewResult(content[2]);
-        }
+    else{
+        document.querySelector(".result").classList.remove("d-none");
+        document.querySelector(".Pwin").innerHTML = secondPlayer.innerHTML;
     }
+}
 
-    function testX(){
-        if(content[0] == content[4] && content[4] == content[8] && content[8] != ""){
-            viewResult(content[0]);
-        }
-        if(content[2] == content[4] && content[4] == content[6] && content[6] != ""){
-            viewResult(content[2]);
-        }
+function testRows(){
+    if(content[0] == content[1] && content[1] == content[2] && content[2] != ""){
+        viewResult(content[0]);
     }
+    else if(content[3] == content[4] && content[4] == content[5] && content[5] != ""){
+        viewResult(content[3]);
+    }
+    else if(content[6] == content[7] && content[7] == content[8] && content[8] != ""){
+        viewResult(content[6]);
+    }
+    else{
+        i++;
+    }
+}
 
+function testColumn(){
+    if(content[0] == content[3] && content[3] == content[6] && content[6] != ""){
+        viewResult(content[0]);
+    }
+    else if(content[1] == content[4] && content[4] == content[7] && content[7] != ""){
+        viewResult(content[1]);
+    }
+    else if(content[2] == content[5] && content[5] == content[8] && content[8] != ""){
+        viewResult(content[2]);
+    }
+    else{
+        i++;
+    }
+}
+
+function testX(){
+    if(content[0] == content[4] && content[4] == content[8] && content[8] != ""){
+        viewResult(content[0]);
+    }
+    else if(content[2] == content[4] && content[4] == content[6] && content[6] != ""){
+        viewResult(content[2]);
+    }
+    else{
+        i++;
+    }
 }
 
 
